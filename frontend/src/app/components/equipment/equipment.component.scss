@@ -29,6 +29,12 @@
 img {
   width: 100%;
   object-fit: cover;
+  transition: transform 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
 }
 
 h2 {

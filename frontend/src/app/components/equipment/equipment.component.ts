@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 import { EquipmentService } from 'src/app/services/equipment.service';
 import { Equipment } from 'src/app/shared/models/Equipment';
 
@@ -14,7 +15,9 @@ export class EquipmentComponent implements OnInit {
 
   constructor(
     activatedRoute: ActivatedRoute,
-    private equipmentService: EquipmentService
+    private equipmentService: EquipmentService,
+    private cartService: CartService,
+    private router: Router
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params.id) this.equipmentId = params.id;
@@ -25,5 +28,10 @@ export class EquipmentComponent implements OnInit {
     this.equipment =
       this.equipmentService.getEquipmentById(this.equipmentId) ??
       new Equipment();
+  }
+
+  addToCart(): void {
+    this.cartService.addToCart(this.equipment);
+    this.router.navigate(['/cart']);
   }
 }

@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="cart-wrapper">
+    <div class="cart-header">
+      <h1>Cart</h1>
+    </div>
+    <p *ngIf="cart.items.length < 1">There are no items added to cart!</p>
+    <div class="cart-body">
+      <div class="cart-items">
+        <div class="cart-item" *ngFor="let item of cart.items">
+          <a [routerLink]="['/equipment', item.equipment.id]">
+            <div class="cart-item-image">
+              <img [src]="item.equipment.image" alt="item.name" />
+            </div>
+          </a>
+          <div class="cart-item-details">
+            <a
+              class="item-name"
+              [routerLink]="['/equipment', item.equipment.id]"
+            >
+              <h3>{{ item.equipment.name }}</h3>
+            </a>
+            <p>Price: {{ item.price | currency : "EUR" }}</p>
+            <select
+              class="quantity"
+              #quantitySelector
+              [(ngModel)]="item.quantity"
+              (change)="changeQuantity(item, item.quantity)"
+            >
+              <option *ngFor="let i of [0, 1, 2, 3, 4, 5]" [value]="i">
+                {{ i }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="cart-summary" *ngIf="cart.items.length > 0">
+        <h2>Summary</h2>
+        <p>Number of items: {{ cart.count }}</p>
+        <p class="total-text">
+          <b>Total:</b> {{ cart.total | currency : "EUR" }}
+        </p>
+        <button
+          class="checkout-button"
+          (click)="checkout()"
+          routerLink="/checkout"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

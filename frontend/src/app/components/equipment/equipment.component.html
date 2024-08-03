@@ -20,9 +20,12 @@
               }}</span>
             </div>
             <p class="price-text">
-              Price: <span class="price">{{ equipment.price }} €</span>
+              Price:
+              <span class="price">{{
+                equipment.price | currency : "EUR"
+              }}</span>
             </p>
-            <button class="btn">ADD TO CART</button>
+            <button class="btn" (click)="addToCart()">ADD TO CART</button>
           </div>
         </div>
       </div>

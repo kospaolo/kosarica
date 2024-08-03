@@ -17,7 +17,7 @@
               tag
             }}</span>
           </div>
-          <p class="price">{{ equipment.price }} €</p>
+          <p class="price">{{ equipment.price | currency : "EUR" }}</p>
         </div>
       </a>
     </li>
