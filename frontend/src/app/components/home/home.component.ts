@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EquipmentService } from 'src/app/services/equipment.service';
 import { Equipment } from 'src/app/shared/models/Equipment';
 
@@ -10,11 +11,18 @@ import { Equipment } from 'src/app/shared/models/Equipment';
 export class HomeComponent implements OnInit {
   equipments: Equipment[] = [];
 
-  constructor(private equipmentService: EquipmentService) {
-    this.equipments = this.equipmentService.getEquipment();
+  constructor(
+    private equipmentService: EquipmentService,
+    activatedRoute: ActivatedRoute
+  ) {
+    activatedRoute.params.subscribe((params) => {
+      if (params.searchTerm) {
+        this.equipments = this.equipmentService.searchEquipment(
+          params.searchTerm
+        );
+      } else this.equipments = this.equipmentService.getEquipment();
+    });
   }
 
-  ngOnInit(): void {
-    console.log(this.equipments);
-  }
+  ngOnInit(): void {}
 }

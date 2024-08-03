@@ -1,10 +1,14 @@
+.container {
+  padding: 2em;
+}
+
 ul {
   list-style-type: none;
-  padding: 2em;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 1em;
   justify-content: center;
+  padding: 0;
 }
 
 li a {
@@ -14,7 +18,7 @@ li a {
   color: #333;
   text-decoration: none;
   height: 18em;
-  width: 14em;
+  width: 16em;
   margin: 0.5rem;
   border: 1px solid #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -40,7 +44,7 @@ li a:hover {
 
 img {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   height: 9em;
   border-radius: 5px 5px 0 0;
 }
@@ -99,4 +103,64 @@ p {
 
 .not:hover {
   color: #f00;
+}
+
+@media (max-width: 1200px) {
+  li a {
+    width: 14em;
+  }
+}
+
+@media (max-width: 992px) {
+  li a {
+    width: 12em;
+  }
+
+  img {
+    height: 8em;
+  }
+}
+
+@media (max-width: 768px) {
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li a {
+    width: 100%;
+    max-width: 20em;
+    height: auto;
+  }
+
+  img {
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  li a {
+    width: 100%;
+    height: auto;
+  }
+
+  .equipment-details {
+    padding: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.7em;
+  }
+
+  .price {
+    font-size: 1em;
+  }
+
+  .tag {
+    font-size: 0.7em;
+  }
 }

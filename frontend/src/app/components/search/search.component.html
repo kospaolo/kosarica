@@ -1,0 +1,13 @@
+<div class="search-wrapper">
+  <input
+    #s
+    class="search-input"
+    type="text"
+    placeholder="Search Equipment..."
+    [value]="searchTerm"
+    (keyup.enter)="search(s.value)"
+  />
+  <button class="search-button" type="button" (click)="search(s.value)">
+    Search
+  </button>
+</div>

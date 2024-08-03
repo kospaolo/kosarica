@@ -11,4 +11,14 @@ export class EquipmentService {
   getEquipment(): Equipment[] {
     return sample_equipment;
   }
+
+  searchEquipment(searchTerm: string): Equipment[] {
+    return this.getEquipment().filter((equipment) =>
+      equipment.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+
+  getEquipmentById(id: string): any {
+    return this.getEquipment().find((equipment) => equipment.id === id);
+  }
 }

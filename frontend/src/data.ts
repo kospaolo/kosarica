@@ -4,7 +4,8 @@ export const sample_equipment: Equipment[] = [
   {
     id: '1',
     name: 'Treadmill',
-    description: 'A high-quality treadmill for cardio workouts',
+    shortDescription: 'A high-quality treadmill for cardio workouts',
+    description: 'A high-quality treadmill for cardio workouts at home or in the gym with a variety of features to help you stay fit and healthy',
     price: 1200,
     tags: ['cardio', 'running'],
     favourite: false,
@@ -13,7 +14,8 @@ export const sample_equipment: Equipment[] = [
   {
     id: '2',
     name: 'Dumbbell',
-    description: 'Adjustable dumbbells for strength training',
+    shortDescription: 'Adjustable dumbbells for strength training',
+    description: 'Adjustable dumbbells for strength training at home or in the gym with a variety of weights to help you build muscle and stay fit',
     price: 300,
     tags: ['strength', 'weights'],
     favourite: false,
@@ -22,7 +24,8 @@ export const sample_equipment: Equipment[] = [
   {
     id: '3',
     name: 'Exercise Bike',
-    description: 'A stationary bike for indoor cycling',
+    shortDescription: 'A stationary bike for indoor cycling',
+    description: 'A stationary bike for indoor cycling at home or in the gym with a variety of features to help you stay fit and healthy',
     price: 1500,
     tags: ['cardio', 'cycling'],
     favourite: true,
@@ -31,7 +34,8 @@ export const sample_equipment: Equipment[] = [
   {
     id: '4',
     name: 'Kettlebell',
-    description: 'A versatile kettlebell for various exercises',
+    shortDescription: 'A versatile kettlebell for various exercises',
+    description: 'A versatile kettlebell for various exercises at home or in the gym with a variety of weights to help you build strength and stay fit',
     price: 50,
     tags: ['strength', 'weights'],
     favourite: false,
@@ -40,7 +44,8 @@ export const sample_equipment: Equipment[] = [
   {
     id: '5',
     name: 'Rowing Machine',
-    description: 'A rowing machine for full-body cardio workouts',
+    shortDescription: 'A rowing machine for full-body cardio workouts',
+    description: 'A rowing machine for full-body cardio workouts at home or in the gym with a variety of features to help you stay fit and healthy',
     price: 900,
     tags: ['cardio', 'rowing'],
     favourite: true,

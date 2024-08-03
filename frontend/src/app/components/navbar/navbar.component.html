@@ -1,7 +1,8 @@
 <div class="container">
   <a routerLink="/" class="logo">KOSarica</a>
   <nav>
-    <ul>
+    <div class="hamburger" (click)="toggleMenu()">&#9776;</div>
+    <ul [ngClass]="{ 'show-menu': isMenuOpen }">
       <li>
         <a routerLink="/">Login</a>
       </li>
@@ -10,12 +11,12 @@
         <div class="menu">
           <a routerLink="/profile">Profile</a>
           <a routerLink="/orders">Orders</a>
-          <a>Logout</a>
+          <a (click)="logout()">Logout</a>
         </div>
       </li>
-      <a routerLink="/cart-page">
-        Cart <span>3</span>
-      </a>
+      <li>
+        <a routerLink="/cart-page"> Cart <span>3</span> </a>
+      </li>
     </ul>
   </nav>
 </div>
