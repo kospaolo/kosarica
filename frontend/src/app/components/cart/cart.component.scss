@@ -26,6 +26,7 @@ h1 {
   gap: 4em;
   border-bottom: 1px solid #333;
   justify-content: flex-start;
+  align-items: center;
 }
 
 select {
@@ -72,6 +73,10 @@ img {
   display: flex;
   gap: 6em;
   align-items: center;
+
+  p {
+    width: 12em;
+  }
 }
 
 .cart-summary {
@@ -84,6 +89,7 @@ img {
   padding: 2em;
   max-width: 250px;
   width: 100%;
+  max-height: 300px;
 
   h2 {
     text-align: center;
