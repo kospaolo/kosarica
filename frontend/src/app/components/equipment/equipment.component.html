@@ -1,18 +1,28 @@
 <div class="container">
   <div class="equipment-wrapper">
     <div class="equipment-content">
-      <div class="equipment-list">
-        <div class="equipment-item">
-          <div class="equipment-item-header">
+      <div class="equipment-item">
+        <div class="equipment-item-image">
+          <img [src]="equipment.image" alt="{{ equipment.name }}" />
+        </div>
+        <div class="equipment-item-content">
+          <div class="equipment-name">
             <h2>{{ equipment.name }}</h2>
+            <span class="favourite {{ equipment.favourite ? '' : 'not' }}"
+              >❤</span
+            >
           </div>
-          <div class="equipment-item-content">
-            <div class="equipment-item-image">
-              <img [src]="equipment.image" alt="{{ equipment.name }}" />
+          <div class="equipment-description">
+            <p>{{ equipment.description }}</p>
+            <div class="tags">
+              <span class="tag" *ngFor="let tag of equipment.tags">{{
+                tag
+              }}</span>
             </div>
-            <div class="equipment-item-description">
-              <p>{{ equipment.description }}</p>
-            </div>
+            <p class="price-text">
+              Price: <span class="price">{{ equipment.price }} €</span>
+            </p>
+            <button class="btn">ADD TO CART</button>
           </div>
         </div>
       </div>
