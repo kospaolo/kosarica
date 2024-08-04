@@ -55,3 +55,20 @@ export const sample_equipment: any[] = [
     image: "assets/images/rowing_machine.jpg",
   },
 ];
+
+export const sample_users: any[] = [
+  {
+    id: "1",
+    email: "test@gmail.com",
+    password: "testtest",
+    name: "Test User",
+    isAdmin: true,
+  },
+  {
+    id: "2",
+    email: "test2@gmail.com",
+    password: "testtest2",
+    name: "Test User 2",
+    isAdmin: false,
+  },
+];

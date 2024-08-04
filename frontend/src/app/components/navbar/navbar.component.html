@@ -3,12 +3,12 @@
   <nav>
     <div class="hamburger" (click)="toggleMenu()">&#9776;</div>
     <ul [ngClass]="{ 'show-menu': isMenuOpen }">
-      <li>
+      <li *ngIf="!user?.token">
         <a routerLink="/login">Login</a>
       </li>
       <li class="menu-wrapper">
-        <a routerLink="/dashboard">Paolo</a>
-        <div class="menu">
+        <a routerLink="/dashboard">{{ user?.name }}</a>
+        <div class="menu" *ngIf="user?.token">
           <a routerLink="/profile">Profile</a>
           <a routerLink="/orders">Orders</a>
           <a (click)="logout()">Logout</a>
