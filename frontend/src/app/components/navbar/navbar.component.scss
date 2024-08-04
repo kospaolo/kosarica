@@ -54,6 +54,10 @@ ul {
   background: #333;
   display: none;
   padding: 5px 1em;
+
+  a:hover {
+    cursor: pointer;
+  }
 }
 
 .menu-wrapper:hover .menu {

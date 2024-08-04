@@ -7,7 +7,7 @@
         <a routerLink="/login">Login</a>
       </li>
       <li class="menu-wrapper">
-        <a routerLink="/dashboard" *ngIf="!user?.token">{{ user.name }}</a>
+        <a routerLink="/dashboard" *ngIf="user?.token">{{ user.name }}</a>
         <div class="menu" *ngIf="user?.token">
           <a routerLink="/profile">Profile</a>
           <a routerLink="/orders">Orders</a>
