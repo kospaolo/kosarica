@@ -9,6 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { EquipmentComponent } from './components/equipment/equipment.component';
 import { CartComponent } from './components/cart/cart.component';
 import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     EquipmentComponent,
     CartComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

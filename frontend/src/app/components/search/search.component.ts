@@ -17,7 +17,7 @@ export class SearchComponent {
 
   search(term: string) {
     if (!term) {
-      return;
+      this.router.navigate(['/']);
     }
     this.router.navigate(['/search', term]);
   }
