@@ -21,14 +21,15 @@ export class EquipmentComponent implements OnInit {
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params.id) this.equipmentId = params.id;
+      this.equipmentService
+        .getEquipmentById(this.equipmentId)
+        .subscribe((serverEquipment) => {
+          this.equipment = serverEquipment;
+        }) ?? new Equipment();
     });
   }
 
-  ngOnInit(): void {
-    this.equipment =
-      this.equipmentService.getEquipmentById(this.equipmentId) ??
-      new Equipment();
-  }
+  ngOnInit(): void {}
 
   addToCart(): void {
     this.cartService.addToCart(this.equipment);

@@ -1,0 +1,49 @@
+<div class="register-container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h2>Register</h2>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        formControlName="email"
+        type="email"
+        class="form-control"
+      />
+      <div
+        *ngIf="submitted && registerForm.controls.email.errors"
+        class="error-message"
+      >
+        <div *ngIf="registerForm.controls.email.errors.required">
+          Email is required
+        </div>
+        <div *ngIf="registerForm.controls.email.errors.email">
+          Email must be a valid email address
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        formControlName="password"
+        type="password"
+        class="form-control"
+      />
+      <div
+        *ngIf="submitted && registerForm.controls.password.errors"
+        class="error-message"
+      >
+        <div *ngIf="registerForm.controls.password.errors.required">
+          Password is required
+        </div>
+        <div *ngIf="registerForm.controls.password.errors.minlength">
+          Password must be at least 6 characters long
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+  <div class="login-link">
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
+  </div>
+</div>
